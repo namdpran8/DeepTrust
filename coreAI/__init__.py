@@ -1,9 +1,19 @@
-# coreAI/__init__.py
+# __init__.py
 
-# Import necessary modules when package is imported
-from .model import get_model
-from .dataset import load_data
+print("Initializing the coreAI package.")
 
-# Package version
-__version__ = "1.0"
-# coreAI/model.py
+# You can also import other files from the package if needed:
+from .dataset import DataLoader
+from .model import DeepfakeDetector
+import torch
+from torch.utils.data import Dataset, DataLoader
+import os
+
+# Specify the path
+path = r'C:\hackathon\DeepTrust\coreAI\dataset'
+
+# Get the list of files and directories in the specified path
+files = os.listdir(path)
+
+# Print the list
+print(files)

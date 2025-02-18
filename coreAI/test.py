@@ -1,7 +1,13 @@
+# This Python script is handling the evaluation of a deep learning model for detecting deepfake
+# images. Here is a breakdown of what each part of the script is doing:
+# This Python script is handling the evaluation of a deep learning model for detecting deepfake
+# images. Here is a breakdown of what each part of the script is doing:
 #Handles model evaluation   
 import torch
 from dataset import get_dataloader
 from model import get_model
+# The code snippet you provided is responsible for loading the test data and the trained deep learning
+# model for evaluation.
 
 # Load Test Data
 test_loader = get_dataloader("test_dataset", batch_size=32, shuffle=False)
@@ -12,7 +18,8 @@ model.load_state_dict(torch.load("deepfake_detector.pth"))
 model.eval()
 
 # Evaluate Model
-correct, total = 0, 0
+# This part of the script is evaluating the deep learning model's performance on a test dataset.
+
 with torch.no_grad():
     for images, labels in test_loader:
         images, labels = images.cuda(), labels.cuda()
